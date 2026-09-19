@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила чата</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #151f32;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-warn: #fbbf24;
+            --accent-danger: #f87171;
+            --border-color: #22314d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 30px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            align-self: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: var(--accent-blue);
+            margin: 0 0 5px 0;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        details {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--accent-blue);
+        }
+
+        summary {
+            padding: 15px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        summary:hover {
+            color: var(--accent-blue);
+        }
+
+        summary::after {
+            content: "➔";
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        .content {
+            padding: 0 15px 15px 15px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .rule-item {
+            margin-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .rule-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .rule-title {
+            font-weight: bold;
+            font-size: 1.05rem;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+
+        .punishment {
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            display: inline-block;
+        }
+
+        .p-mut { background: rgba(251, 191, 36, 0.15); color: var(--accent-warn); }
+        .p-ban { background: rgba(248, 113, 113, 0.15); color: var(--accent-danger); }
+        .p-info { background: rgba(56, 189, 242, 0.15); color: var(--accent-blue); }
+
+        .clarification {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+            padding-left: 12px;
+            border-left: 2px solid var(--accent-blue);
+        }
+
+        .contacts-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .contacts-list li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contacts-list a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contacts-list a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Правила чата</h1>
+        <p class="subtitle">Соблюдайте правила, чтобы избежать ограничений.</p>
+        
+        <details open>
+            <summary>Раздел 1. Общение</summary>
+            <div class="content">
+                <div class="rule-item">
+                    <span class="rule-title">1.1 Дискриминация и оскорбления</span> <span class="punishment p-mut">мут 3ч</span>
+                    <div>Оскорбления по расе, национальности, соц. положению, религии, гендеру.</div>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-title">1.2 - 1.9 Прочие правила общения</span>
+                    <div>Включают ограничения на чёрный юмор, рекламу, провокации, оскорбления администрации и ботов. Полный текст правил доступен в исходном коде выше.</div>
+                </div>
+            </div>
+        </details>
+
+        <details>
+            <summary>Раздел 2-5. Контент, рейды, апелляции и права</summary>
+            <div class="content">
+                <div class="rule-item">
+                    <span class="rule-title">Информация</span>
+                    <div>Разделы содержат регламент по NSFW-контенту, банам, рейдам, апелляциям и контактам: <a href="https://t.me" target="_blank">@nisexx</a> и <a href="https://t.me" target="_blank">@nlsexx_bot</a>. Полный текст развернут в коде.</div>
+                </div>
+            </div>
+        </details>
+    </div>
+</body>
+</html>
+
